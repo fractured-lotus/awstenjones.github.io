@@ -146,27 +146,21 @@ textarea {
 
 .socials a {
   display: block;
-  width: 20px;
-  height: 20px;
+  width: 27px;
+  height: 27px;
   line-height: 0;
   text-decoration: none;
 }
 
 .socials svg {
   display: block;
-  width: 20px;
-  height: 20px;
+  width: 27px;
+  height: 27px;
   fill: currentColor;
 }
 
 .site-footer .socials {
   gap: 14px;
-}
-
-.site-footer .socials a,
-.site-footer .socials svg {
-  width: 24px;
-  height: 24px;
 }
 
 .nav-toggle {
@@ -379,9 +373,31 @@ h1,
   aspect-ratio: 596.5 / 778.5;
 }
 
-.contact-page .form {
-  max-width: calc(100% - clamp(2rem, 3.85vw, 55px));
-  margin-top: 103px;
+.reach {
+  margin-top: 1.6rem;
+  max-width: 36rem;
+}
+
+.mail-link {
+  display: inline-block;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(1.45rem, 2.4vw, 2.15rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.16em;
+  overflow-wrap: anywhere;
+}
+
+.reach-links {
+  margin: 1.15rem 0 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.reach-links a {
+  font-weight: 600;
 }
 
 .form {
@@ -740,8 +756,8 @@ textarea:focus {
     gap: 14px;
   }
 
-  .contact-page .form {
-    margin-top: 1.75rem;
+  .reach {
+    margin-top: 1.35rem;
   }
 
   .projects-title {
