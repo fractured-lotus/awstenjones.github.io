@@ -146,16 +146,16 @@ textarea {
 
 .socials a {
   display: block;
-  width: 27px;
-  height: 27px;
+  width: 44px;
+  height: 44px;
   line-height: 0;
   text-decoration: none;
 }
 
 .socials svg {
   display: block;
-  width: 27px;
-  height: 27px;
+  width: 44px;
+  height: 44px;
   fill: currentColor;
 }
 
