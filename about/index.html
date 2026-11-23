@@ -32,40 +32,47 @@
         </div>
       </div>
     </header>
-    <main id="main" class="page">
+    <main id="main" class="page about-page">
       <div class="wrap">
-        <h1>Who am I?</h1>
-        <p class="prose">I am a first year Bachelor of Screen Media student at Victoria University. I have been an avid storyteller for many years, and continue today on personal projects I aim to one day put to screen. In my free time, I like to go trainspotting, where I regularly go out and film various trains on the state network.</p>
-        <figure class="portrait">
-          <img src="../images/awsten.jpg" alt="Awsten Jones" />
-        </figure>
-        <h2 class="section-head">Send me an email;</h2>
-        <form class="form" data-mailto="awstenjones@gmail.com" data-subject="Lotus Films — about">
-          <div class="form-row">
-            <label>
-              <span>First Name</span>
-              <input type="text" name="First Name" autocomplete="given-name" required />
-            </label>
-            <label>
-              <span>Last Name</span>
-              <input type="text" name="Last Name" autocomplete="family-name" required />
-            </label>
+        <section class="about-intro split">
+          <div>
+            <h1>Who am I?</h1>
+            <p class="prose narrow">I am a first year Bachelor of Screen Media student at Victoria University. I have been an avid storyteller for many years, and continue today on personal projects I aim to one day put to screen. In my free time, I like to go trainspotting, where I regularly go out and film various trains on the state network.</p>
           </div>
-          <label>
-            <span>Email (required)</span>
-            <input type="email" name="Email" autocomplete="email" required />
-          </label>
-          <label class="check">
-            <input type="checkbox" name="updates" value="yes" />
-            <span>Sign up for news and updates</span>
-          </label>
-          <label>
-            <span>Message (required)</span>
-            <textarea name="Message" required></textarea>
-          </label>
-          <button class="submit" type="submit">Submit</button>
-          <p class="form-note" role="status"></p>
-        </form>
+          <figure class="split-photo">
+            <img src="../images/awsten.jpg" alt="Awsten Jones" />
+          </figure>
+        </section>
+        <section class="about-email split">
+          <h1 class="narrow">Send me an email;</h1>
+          <form class="form" data-mailto="awstenjones@gmail.com" data-subject="Lotus Films — about">
+            <p class="name-legend">Name</p>
+            <div class="form-row">
+              <label class="field">
+                <span class="field-label">First Name <span class="req">(required)</span></span>
+                <input type="text" name="First Name" autocomplete="given-name" required />
+              </label>
+              <label class="field">
+                <span class="field-label">Last Name <span class="req">(required)</span></span>
+                <input type="text" name="Last Name" autocomplete="family-name" required />
+              </label>
+            </div>
+            <label class="field">
+              <span class="field-label">Email <span class="req">(required)</span></span>
+              <input type="email" name="Email" autocomplete="email" required />
+            </label>
+            <label class="check">
+              <input type="checkbox" name="updates" value="yes" />
+              <span>Sign up for news and updates</span>
+            </label>
+            <label class="field">
+              <span class="field-label">Message <span class="req">(required)</span></span>
+              <textarea name="Message" required></textarea>
+            </label>
+            <button class="submit" type="submit">Submit</button>
+            <p class="form-note" role="status"></p>
+          </form>
+        </section>
       </div>
     </main>
     <footer class="site-footer">

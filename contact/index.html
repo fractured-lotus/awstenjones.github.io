@@ -32,37 +32,38 @@
         </div>
       </div>
     </header>
-    <main id="main" class="page">
-      <div class="wrap contact-layout">
+    <main id="main" class="page contact-page">
+      <div class="wrap split">
         <div>
           <h1>Want to chat?</h1>
           <p class="lede">Shoot me an email!</p>
-          <figure class="still">
-            <img src="../images/camera.jpg" alt="Blackmagic 6K" />
-          </figure>
+          <form class="form" data-mailto="awstenjones@gmail.com" data-subject="Lotus Films — contact">
+            <p class="name-legend">Name</p>
+            <div class="form-row">
+              <label class="field">
+                <span class="field-label">First Name <span class="req">(required)</span></span>
+                <input type="text" name="First Name" autocomplete="given-name" required />
+              </label>
+              <label class="field">
+                <span class="field-label">Last Name <span class="req">(required)</span></span>
+                <input type="text" name="Last Name" autocomplete="family-name" required />
+              </label>
+            </div>
+            <label class="field">
+              <span class="field-label">Email <span class="req">(required)</span></span>
+              <input type="email" name="Email" autocomplete="email" required />
+            </label>
+            <label class="field">
+              <span class="field-label">Message <span class="req">(required)</span></span>
+              <textarea name="Message" required></textarea>
+            </label>
+            <button class="submit" type="submit">Send</button>
+            <p class="form-note" role="status"></p>
+          </form>
         </div>
-        <form class="form" data-mailto="awstenjones@gmail.com" data-subject="Lotus Films — contact">
-          <div class="form-row">
-            <label>
-              <span>First Name</span>
-              <input type="text" name="First Name" autocomplete="given-name" required />
-            </label>
-            <label>
-              <span>Last Name</span>
-              <input type="text" name="Last Name" autocomplete="family-name" required />
-            </label>
-          </div>
-          <label>
-            <span>Email</span>
-            <input type="email" name="Email" autocomplete="email" required />
-          </label>
-          <label>
-            <span>Message</span>
-            <textarea name="Message" required></textarea>
-          </label>
-          <button class="submit" type="submit">SEND</button>
-          <p class="form-note" role="status"></p>
-        </form>
+        <figure class="split-photo">
+          <img src="../images/camera.jpg" alt="Blackmagic 6K" />
+        </figure>
       </div>
     </main>
     <footer class="site-footer">
