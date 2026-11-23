@@ -8,6 +8,57 @@
     });
   }
 
+  function layoutMosaic(root) {
+    var figures = Array.prototype.slice.call(root.children);
+    var width = root.clientWidth;
+    if (!width || !figures.length) return;
+    var gap = 19;
+    var perRow = width < 720 ? 1 : width < 980 ? 2 : 3;
+    var ratios = figures.map(function (fig) {
+      var img = fig.querySelector("img");
+      var w = img && img.naturalWidth ? img.naturalWidth : 3;
+      var h = img && img.naturalHeight ? img.naturalHeight : 2;
+      return w / h;
+    });
+    var row = [];
+    var sum = 0;
+    function paint(indexes, ratioSum) {
+      var gaps = gap * (indexes.length - 1);
+      var h = (width - gaps) / ratioSum;
+      indexes.forEach(function (idx) {
+        var fig = figures[idx];
+        var img = fig.querySelector("img");
+        fig.style.width = ratios[idx] * h + "px";
+        if (img) {
+          img.style.height = h + "px";
+          img.style.width = "100%";
+        }
+      });
+    }
+    for (var i = 0; i < figures.length; i++) {
+      row.push(i);
+      sum += ratios[i];
+      var rowFull = row.length === perRow;
+      var last = i === figures.length - 1;
+      if (rowFull || last) {
+        paint(row, sum);
+        row = [];
+        sum = 0;
+      }
+    }
+  }
+
+  document.querySelectorAll("[data-mosaic]").forEach(function (root) {
+    var run = function () {
+      layoutMosaic(root);
+    };
+    run();
+    window.addEventListener("resize", run);
+    root.querySelectorAll("img").forEach(function (img) {
+      if (!img.complete) img.addEventListener("load", run);
+    });
+  });
+
   document.querySelectorAll("video[data-hls]").forEach(function (video) {
     var src = video.getAttribute("data-hls");
     if (!src) return;
@@ -65,7 +116,7 @@
     lightbox.setAttribute("hidden", "");
   }
 
-  document.querySelectorAll(".strip img").forEach(function (img) {
+  document.querySelectorAll(".mosaic img, .strip img").forEach(function (img) {
     img.style.cursor = "zoom-in";
     img.addEventListener("click", function () {
       lightImg.src = img.currentSrc || img.src;

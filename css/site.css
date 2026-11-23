@@ -76,9 +76,9 @@ textarea {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 1.5rem 2rem;
-  min-height: var(--header-h);
-  padding: 1rem var(--gutter);
+  gap: 1.5rem 1.8rem;
+  min-height: 70px;
+  padding: 0 var(--gutter);
   background: inherit;
 }
 
@@ -93,7 +93,7 @@ textarea {
 .site-title {
   font-family: var(--serif);
   font-weight: 700;
-  font-size: clamp(1.35rem, 2vw, 1.7rem);
+  font-size: clamp(1.15rem, 1.71vw, 1.54rem);
   letter-spacing: -0.02em;
   text-decoration: none;
   line-height: 1;
@@ -103,19 +103,21 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: clamp(1.4rem, 3vw, 2.8rem);
+  gap: 29px;
   grid-column: 2 / -1;
 }
 
 .site-nav {
   display: flex;
   justify-content: flex-end;
-  gap: clamp(1.1rem, 2.4vw, 2.4rem);
+  align-items: center;
+  gap: 29px;
 }
 
 .site-nav a {
   text-decoration: none;
-  font-size: 1.02rem;
+  font-size: 16px;
+  line-height: 1;
   letter-spacing: 0.01em;
 }
 
@@ -127,21 +129,32 @@ textarea {
 .socials {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 29px;
 }
 
 .socials a {
-  display: grid;
-  place-items: center;
-  width: 1.7rem;
-  height: 1.7rem;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 0;
   text-decoration: none;
 }
 
 .socials svg {
-  width: 1.35rem;
-  height: 1.35rem;
+  display: block;
+  width: 20px;
+  height: 20px;
   fill: currentColor;
+}
+
+.site-footer .socials {
+  gap: 14px;
+}
+
+.site-footer .socials a,
+.site-footer .socials svg {
+  width: 24px;
+  height: 24px;
 }
 
 .nav-toggle {
@@ -220,25 +233,65 @@ h1,
   outline-offset: 3px;
 }
 
-.project-hero {
-  display: grid;
-  grid-template-columns: minmax(12rem, 0.72fr) minmax(0, 1.45fr);
-  gap: clamp(1.5rem, 4vw, 4rem);
-  align-items: end;
+.gallery-page {
+  padding-top: 0;
 }
 
-.project-titles .display + .display {
-  margin-top: 0.15em;
+.projects-title {
+  margin: 0;
+  padding: 0 0 20px;
+  font-size: clamp(4.2rem, 8.8vw, 8rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
 }
 
-.project-titles .display {
-  font-size: clamp(3.6rem, 7.6vw, 7.6rem);
+.rats-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  padding-bottom: 23px;
 }
 
-.strips {
-  margin-top: clamp(3rem, 7vw, 6rem);
-  display: grid;
-  gap: clamp(2.2rem, 5vw, 4.2rem);
+.rats-title {
+  margin: 0;
+  font-size: clamp(2.6rem, 5.24vw, 4.8rem);
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.rats-row .player {
+  width: min(431px, 42%);
+  height: auto;
+  aspect-ratio: 431 / 242;
+  flex: 0 0 auto;
+  margin: 0;
+  border: 0;
+}
+
+.mosaic {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  column-gap: 19px;
+  margin-top: 58px;
+}
+
+.mosaic figure {
+  margin: 0 0 56px;
+}
+
+.mosaic img {
+  width: 100%;
+  object-fit: cover;
+  background: rgba(45, 45, 42, 0.04);
+}
+
+.mosaic figcaption {
+  margin-top: 15px;
+  font-size: 14px;
+  line-height: 1.45;
 }
 
 .strip {
@@ -385,16 +438,19 @@ textarea:focus {
 .site-footer {
   background: var(--gold);
   color: var(--ink);
-  padding: clamp(2.5rem, 6vw, 4.5rem) var(--gutter) clamp(2.2rem, 5vw, 3.6rem);
+  padding: 79px var(--gutter) 123px;
 }
 
 .footer-grid {
-  width: min(var(--max), 100%);
+  width: 100%;
   margin-inline: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "name email"
+    ". icons";
+  column-gap: 1.5rem;
+  align-items: center;
 }
 
 .footer-name,
@@ -402,17 +458,31 @@ textarea:focus {
   margin: 0;
   font-family: var(--serif);
   font-weight: 700;
-  font-size: clamp(1.7rem, 3.1vw, 2.7rem);
-  line-height: 1.05;
+  font-size: clamp(1.6rem, 3.27vw, 2.95rem);
+  line-height: 1.1;
   letter-spacing: -0.03em;
   text-decoration: none;
 }
 
+.footer-name {
+  grid-area: name;
+  align-self: center;
+}
+
 .footer-aside {
-  display: grid;
-  justify-items: end;
-  gap: 0.9rem;
+  display: contents;
+}
+
+.footer-email {
+  grid-area: email;
+  justify-self: end;
   text-align: right;
+}
+
+.footer-aside .socials {
+  grid-area: icons;
+  justify-self: end;
+  margin-top: 27px;
 }
 
 .lightbox {
@@ -494,21 +564,46 @@ textarea:focus {
     gap: 1.05rem;
   }
 
-  .project-hero,
+  .rats-row,
   .form-row,
-  .footer-grid,
   .contact-layout {
-    grid-template-columns: 1fr;
     display: grid;
+    grid-template-columns: 1fr;
   }
 
-  .footer-aside,
-  .footer-email {
+  .rats-row .player {
+    width: 100%;
+  }
+
+  .footer-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .footer-aside {
+    display: grid;
     justify-items: start;
+    gap: 0.9rem;
+  }
+
+  .footer-email,
+  .footer-aside .socials {
+    justify-self: start;
     text-align: left;
+    margin-top: 0;
   }
 
   .display {
     font-size: clamp(3.3rem, 16vw, 5.4rem);
+  }
+
+  .projects-title {
+    font-size: clamp(3.2rem, 14vw, 5rem);
+  }
+
+  .rats-title {
+    font-size: clamp(2.2rem, 9vw, 3.2rem);
   }
 }
