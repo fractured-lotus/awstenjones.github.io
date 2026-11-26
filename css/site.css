@@ -208,6 +208,7 @@ h1,
 }
 
 .player {
+  display: block;
   width: 100%;
   aspect-ratio: 1204 / 677;
   height: auto;

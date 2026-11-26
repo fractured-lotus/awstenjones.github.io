@@ -59,22 +59,6 @@
     });
   });
 
-  document.querySelectorAll("video[data-hls]").forEach(function (video) {
-    var src = video.getAttribute("data-hls");
-    if (!src) return;
-    if (video.canPlayType("application/vnd.apple.mpegurl")) {
-      video.src = src;
-      return;
-    }
-    if (window.Hls && window.Hls.isSupported()) {
-      var hls = new window.Hls({ enableWorker: true });
-      hls.loadSource(src);
-      hls.attachMedia(video);
-      return;
-    }
-    video.src = src;
-  });
-
   document.querySelectorAll("form[data-mailto]").forEach(function (form) {
     form.addEventListener("submit", function (event) {
       event.preventDefault();

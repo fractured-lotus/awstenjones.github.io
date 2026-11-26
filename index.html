@@ -36,16 +36,13 @@
       <div class="wrap">
         <h1>Lotus Films</h1>
         <div class="reel">
-          <video
+          <iframe
             class="player"
-            controls
-            playsinline
-            preload="metadata"
-            poster="images/showreel.jpg"
-            data-hls="https://video.squarespace-cdn.com/content/v1/6affccdc666b555bdaeba9d0/530b9cf9-b7c2-454b-8e7b-f9e7edc90343/playlist.m3u8"
-          >
-            <a href="https://video.squarespace-cdn.com/content/v1/6affccdc666b555bdaeba9d0/530b9cf9-b7c2-454b-8e7b-f9e7edc90343/playlist.m3u8">Showreel</a>
-          </video>
+            src="https://www.youtube.com/embed/1ZaJ1AhX7do"
+            title="Showreel"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
           <p class="caption">Showreel</p>
         </div>
       </div>
@@ -66,7 +63,6 @@
         </div>
       </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.20/dist/hls.min.js"></script>
     <script src="js/site.js"></script>
   </body>
 </html>
